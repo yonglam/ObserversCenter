@@ -1,6 +1,5 @@
 //
 //  ObserversCenter.h
-//  WeixinFoundation
 //
 //  Created by Lin Yong on 15/3/2.
 //  Copyright (c) 2015年 Lin Yong. All rights reserved.

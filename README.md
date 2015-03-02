@@ -1,3 +1,5 @@
+![Platform](https://img.shields.io/cocoapods/p/PLObservers.svg?style=flat)
+
 # ObserversCenter
 Base on [PLObservers](https://github.com/Polidea/PLObservers), create an observers center for multi-observer pattern in obj-c. 
 
@@ -22,7 +24,7 @@ NOTIFY_OBSERVERS_WITH_KEY(protocol, key, func)
 ```
 ### Example
 
-```
+```Objective-C
 /////////////  ViewController.m   /////////////
 
 @interface ViewController () <IClockMgrExt>
@@ -47,7 +49,7 @@ NOTIFY_OBSERVERS_WITH_KEY(protocol, key, func)
 
 @end
 ```
-```
+```Objective-C
 
 /////////////   ClockMgr.h   /////////////
 
@@ -60,7 +62,7 @@ NOTIFY_OBSERVERS_WITH_KEY(protocol, key, func)
 @interface ClockMgr : NSObject
 @end
 ```
-```
+```Objective-C
 /////////////    ClockMgr.m    /////////////
 
 @implementation ClockMgr

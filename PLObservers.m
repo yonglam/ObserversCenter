@@ -56,22 +56,20 @@
 }
 
 - (void)addObserver:(id <NSObject>)observer {
-    @synchronized(self){
-        [_observers addObject:[PLWeakRef weakRefWithObject:observer]];
-    }
+    NSString *errmsg = [NSString stringWithFormat:@"%@ must conforms to protocol<%@>", observer, NSStringFromProtocol(_observerProtocol)];
+    NSAssert([observer conformsToProtocol:_observerProtocol], errmsg);
+    [_observers addObject:[PLWeakRef weakRefWithObject:observer]];
 }
 
 - (void)removeObserver:(id <NSObject>)observer {
-    @synchronized(self){
-        for(NSUInteger i = 0; i < _observers.count;){
-            PLWeakRef * ref = _observers[i];
-            if(ref.weakReference == nil){
-                [_observers removeObjectAtIndex:i];
-            } else if(ref.weakReference == observer){
-                [_observers removeObjectAtIndex:i];
-            } else {
-                ++i;
-            }
+    for(NSUInteger i = 0; i < _observers.count;){
+        PLWeakRef * ref = _observers[i];
+        if(ref.weakReference == nil){
+            [_observers removeObjectAtIndex:i];
+        } else if(ref.weakReference == observer){
+            [_observers removeObjectAtIndex:i];
+        } else {
+            ++i;
         }
     }
 }

@@ -6,7 +6,7 @@ Base on [PLObservers](https://github.com/Polidea/PLObservers), create an observe
 ### Advantages beyond PLObservers
 
 1. Decoupling the observed and the observers; 
-2. New feature of subscribing on a specify key;
+2. New feature of subscribing on a specified key;
 3. Easier usage.
 
 ### Usage
